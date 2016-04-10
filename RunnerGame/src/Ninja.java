@@ -1,4 +1,4 @@
-import java.awt.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -12,22 +12,19 @@ import gpxUtilities.SpriteSheet;
 import sun.applet.Main;
 import javax.swing.*;
 
-public class Player extends JPanel implements ActionListener, KeyListener {
+public class Ninja implements ActionListener, KeyListener {
 
-    private BufferedImage Img;
+    public BufferedImage Img;
     SpriteSheet ssRun, ssJump;
     Timer t = new Timer(100, this);
     int velx = 0, vely = 0;
     int x = 150, y = 200;
     int runSpriteOffcet = 5, jumpSpriteOffcet = 0;
-    boolean isOnGround = true, jumpAnimationAloud = true;
+    boolean isOnGround = true, jumpAnimationAllowed = true;
 
-    public Player() {
+    public Ninja() {
 
         t.start();
-        addKeyListener(this);
-        setFocusable(true);
-        setFocusTraversalKeysEnabled(false);
         BufferedImageLoader loader = new BufferedImageLoader();
         BufferedImage spriteSheetRun = null;
         BufferedImage spriteSheetJump = null;
@@ -42,31 +39,27 @@ public class Player extends JPanel implements ActionListener, KeyListener {
         ssJump = new SpriteSheet(spriteSheetJump);
     }
 
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        Graphics2D g2 = (Graphics2D) g;
-        g2.drawImage(Img, x, y, null);
-        //This method check if the ninja is on ground or in the air.
-        checkNinjaLocation();
-    }
-
-
     public void actionPerformed(ActionEvent e) {
-        repaint();
         x += velx;
         y += vely;
+        checkNinjaLocation();
     }
 
     public void up() {
         if(isOnGround) {
-            t.setDelay(25);
+            t.setDelay(15);
             vely = -10;
             velx = 0;
             isOnGround = false;
             jump();
         }
     }
-
+    public void keyPressed(KeyEvent e) {
+        int key = e.getKeyCode();
+        if (key == KeyEvent.VK_LEFT) {
+            left();
+        }
+    }
     public void down() {
         vely = 10;
         velx = 0;
@@ -82,50 +75,31 @@ public class Player extends JPanel implements ActionListener, KeyListener {
         velx = 10;
     }
 
-    public void keyPressed(KeyEvent e) {
-        int key = e.getKeyCode();
-        if (key == KeyEvent.VK_LEFT) {
-            left();
-        }
-
-        if (key == KeyEvent.VK_RIGHT) {
-            right();
-        }
-
-        if (key == KeyEvent.VK_UP) {
-            up();
-        }
-
-        if (key == KeyEvent.VK_DOWN) {
-            down();
-        }
-    }
-
-    private void jump() {
-        if(jumpAnimationAloud) {
+    public void jump() {
+        if(jumpAnimationAllowed) {
             this.Img = ssJump.grabSprite(jumpSpriteOffcet, 0, 82, 85);
             jumpSpriteOffcet += 80;
         }
         if(jumpSpriteOffcet >= 240){
             jumpSpriteOffcet = 240;
-            jumpAnimationAloud = false;
+            jumpAnimationAllowed = false;
         }
         runSpriteOffcet = 5;
     }
 
-    private void run(){
+    public void run(){
         this.Img = ssRun.grabSprite(runSpriteOffcet, 0, 79, 85);
         runSpriteOffcet += 80 + 2;
         if(runSpriteOffcet >= 450){
             runSpriteOffcet = 5;
         }
-        jumpAnimationAloud = true;
+        jumpAnimationAllowed = true;
         jumpSpriteOffcet = 0;
     }
 
-    private void checkNinjaLocation() {
+    public void checkNinjaLocation() {
         //If the ninja is at highest point at the jump tell it to fall down.
-        if(y < 25)
+        if(y < 20)
         {
             down();
         }
@@ -137,11 +111,11 @@ public class Player extends JPanel implements ActionListener, KeyListener {
             run();
         }
         //If ninja is going for jump play the animation
-        if(y > 25 && y < 200) {
+        if(y > 20 && y < 200) {
             jump();
         }
-    }
 
+    }
     public void keyTyped(KeyEvent e) {
     }
 

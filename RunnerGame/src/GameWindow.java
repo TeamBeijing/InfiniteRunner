@@ -16,7 +16,6 @@ public class GameWindow extends JFrame {
         setLocationRelativeTo(null);
         getContentPane().setBackground(new Color(255, 255, 255, 50));
         setLayout(null);
-
         //Escape should close the window
         InputMap im = getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
         ActionMap am = getRootPane().getActionMap();
@@ -32,11 +31,13 @@ public class GameWindow extends JFrame {
         //ScreenSize
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-        //add player
-        Player p = new Player();
-        p.setBounds(0, 0, (int) screenSize.getWidth(), (int) screenSize.getHeight() * 3 / 4);
+        //add panel
+        Panel p = new Panel();
         add(p);
 
+        // Obstacle o = new Obstacle();
+        // o.setBounds(0, 0, (int) screenSize.getWidth(), (int) screenSize.getHeight() * 3 / 4);
+       // add(o);
         //full screen - optional
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         //setSize(width, height);
