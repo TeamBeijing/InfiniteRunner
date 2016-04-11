@@ -3,21 +3,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.*;
 
 public class Panel extends JPanel implements ActionListener, KeyListener {
 
     Timer t = new Timer(2, this);
     Ninja n;
-    Obstacle o;
+    ObstacleDatabase obstacleDB;
     public Panel() {
 
         t.start();
         addKeyListener(this);
         setFocusable(true);
-        setBounds(0, 0, 582, 583);
         n = new Ninja();
-        o = new Obstacle();
+        obstacleDB = new ObstacleDatabase();
         setFocusTraversalKeysEnabled(false);
 
     }
@@ -26,11 +27,10 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.drawImage(n.Img, n.x, n.y, null);
-        g2.drawImage(o.Img, o.x, o.y, null);
-        System.out.println(n.y);
-        //This method check if the ninja is on ground or in the air.
-
-    }
+        for(Obstacle obst : obstacleDB.obstacles) {
+            g2.drawImage(obst.img, obst.x, obst.y, null);
+            }
+        }
 
 
     public void actionPerformed(ActionEvent e) {

@@ -31,16 +31,17 @@ public class GameWindow extends JFrame {
         //ScreenSize
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-        //add panel
-        Panel p = new Panel();
-        add(p);
-
         // Obstacle o = new Obstacle();
         // o.setBounds(0, 0, (int) screenSize.getWidth(), (int) screenSize.getHeight() * 3 / 4);
        // add(o);
         //full screen - optional
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         //setSize(width, height);
+
+        //add panel
+        Panel p = new Panel();
+        p.setBounds(0, 0, (int)screenSize.getWidth(), (int)screenSize.getHeight() * 3/4);
+        add(p);
 
         // remove border
         setUndecorated(true);
