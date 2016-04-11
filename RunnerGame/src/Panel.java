@@ -3,8 +3,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
-import java.util.Iterator;
 import javax.swing.*;
 
 public class Panel extends JPanel implements ActionListener, KeyListener {
@@ -12,6 +10,9 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     Timer t = new Timer(2, this);
     Ninja n;
     ObstacleDatabase obstacleDB;
+    private long tStart = System.currentTimeMillis();
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
     public Panel() {
 
         t.start();
@@ -27,10 +28,17 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.drawImage(n.Img, n.x, n.y, null);
-        for(Obstacle obst : obstacleDB.obstacles) {
+        for (Obstacle obst : obstacleDB.obstacles) {
             g2.drawImage(obst.img, obst.x, obst.y, null);
-            }
         }
+        g2.setFont(new Font("Consolas", Font.BOLD, 40));
+        g2.setColor(Color.black);
+        g2.drawString(
+                String.format("%1$10d",
+                        (System.currentTimeMillis() - tStart) / 50)
+                        .replaceAll(" ", "0"),
+                (int) screenSize.getWidth() - 240, 50);
+    }
 
 
     public void actionPerformed(ActionEvent e) {

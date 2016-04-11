@@ -28,9 +28,6 @@ public class GameWindow extends JFrame {
             }
         });
 
-        //ScreenSize
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-
         // Obstacle o = new Obstacle();
         // o.setBounds(0, 0, (int) screenSize.getWidth(), (int) screenSize.getHeight() * 3 / 4);
        // add(o);
@@ -38,25 +35,20 @@ public class GameWindow extends JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         //setSize(width, height);
 
+        //ScreenSize
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
         //add panel
+        //this.setContentPane(new Ground());
         Panel p = new Panel();
-        p.setBounds(0, 0, (int)screenSize.getWidth(), (int)screenSize.getHeight() * 3/4);
+        p.setBounds(0, 0, (int)screenSize.getWidth(), (int)screenSize.getHeight() * 3/4 - 30);
+        Ground g = new Ground();
+        g.setBounds(0, (int)screenSize.getHeight() * 3/4 - 30, (int) screenSize.getWidth(), (int) screenSize.getHeight());
         add(p);
+        add(g);
 
         // remove border
         setUndecorated(true);
-
-        //background
-        try {
-            backgroundIMG = ImageIO.read(new File("src/textures/background.png"))
-                    .getScaledInstance((int) screenSize.getWidth(), (int) screenSize.getHeight() / 4, Image.SCALE_SMOOTH);
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        }
-
-        JLabel background = new JLabel(new ImageIcon(backgroundIMG));
-        background.setBounds(0, (int) screenSize.getHeight() * 3 / 4, (int) screenSize.getWidth(), (int) screenSize.getHeight() / 4);
-        add(background);
 
 
     }

@@ -1,10 +1,8 @@
-import gpxUtilities.BufferedImageLoader;
 import gpxUtilities.SpriteSheet;
-import sun.applet.Main;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
 
@@ -15,7 +13,9 @@ public abstract class Obstacle implements ActionListener {
 
     Timer t = new Timer(20, this);
     int velx = 0, vely = 0;
-    int x = 1400, y = 200;
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    int relativeY = (int) screenSize.getHeight() * 3 / 4 - 150;
+    int x = 1400, y = relativeY;
 
     public Obstacle() {
         t.start();
