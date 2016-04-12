@@ -13,6 +13,7 @@ public class Ground extends JPanel {
     int width = (int) screenSize.getWidth();
 
     public Ground() {
+
         try {
             backgroundIMG = ImageIO.read(new File("src/textures/background.png"))
                     .getScaledInstance((int) screenSize.getWidth(), (int) screenSize.getHeight() / 4, Image.SCALE_SMOOTH);

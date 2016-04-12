@@ -1,8 +1,10 @@
 import gpxUtilities.SpriteSheet;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.Ellipse2D;
 import java.awt.image.BufferedImage;
 
 
@@ -16,7 +18,7 @@ public abstract class Obstacle implements ActionListener {
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     int relativeY = (int) screenSize.getHeight() * 3 / 4 - 150;
     int x = 1400, y = relativeY;
-    public Rectangle boundingBox;
+    public Shape boundingBox;
 
     public Obstacle() {
         t.start();
@@ -28,7 +30,12 @@ public abstract class Obstacle implements ActionListener {
         y += vely;
         left();
         PlayAnimation();
-        boundingBox = new Rectangle(x, y, img.getWidth(), img.getHeight());
+        if (getClass() == Razor.class) {
+            boundingBox = new Ellipse2D.Float(x, y + 2, img.getWidth(), img.getWidth());
+        } else {
+            boundingBox = new Rectangle(x, y, img.getWidth(), img.getHeight());
+        }
+
     }
 
     public void left() {

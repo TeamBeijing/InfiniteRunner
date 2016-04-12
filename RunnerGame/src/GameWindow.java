@@ -28,9 +28,6 @@ public class GameWindow extends JFrame {
             }
         });
 
-        // Obstacle o = new Obstacle();
-        // o.setBounds(0, 0, (int) screenSize.getWidth(), (int) screenSize.getHeight() * 3 / 4);
-       // add(o);
         //full screen - optional
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         //setSize(width, height);
@@ -39,13 +36,22 @@ public class GameWindow extends JFrame {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
         //add panel
-        //this.setContentPane(new Ground());
+
+        JLayeredPane lpane = new JLayeredPane();
+        setLayout(new BorderLayout());
+        add(lpane, BorderLayout.CENTER);
+        lpane.setBounds(0, 0, (int) screenSize.getWidth(), (int) screenSize.getHeight());
+
         Panel p = new Panel();
         p.setBounds(0, 0, (int)screenSize.getWidth(), (int)screenSize.getHeight() * 3/4 - 30);
         Ground g = new Ground();
         g.setBounds(0, (int)screenSize.getHeight() * 3/4 - 30, (int) screenSize.getWidth(), (int) screenSize.getHeight());
-        add(p);
-        add(g);
+
+        lpane.add(g, new Integer(0), 0);
+        lpane.add(p, new Integer(1), 0);
+
+        //add(p);
+        //add(g);
 
         // remove border
         setUndecorated(true);

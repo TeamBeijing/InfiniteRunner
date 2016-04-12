@@ -51,7 +51,13 @@ public class Ninja implements ActionListener, KeyListener {
         x += velx;
         y += vely;
         checkNinjaLocation();
-        boundingBox = new Rectangle(x, y, 79, 85);
+        if (isOnGround) {
+            boundingBox = new Rectangle(x, y, 79, 85);
+        }
+        else {
+            //jumping
+            boundingBox = new Rectangle(x + 10, y, 75, 85);
+        }
     }
 
     public void up() {

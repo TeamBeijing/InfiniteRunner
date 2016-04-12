@@ -3,20 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="32a02c9a-3fd5-4d8f-85bd-e033ebde66c1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/CollisionDetector.class" afterPath="$PROJECT_DIR$/bin/CollisionDetector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/GameWindow.class" afterPath="$PROJECT_DIR$/bin/GameWindow.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Ground.class" afterPath="$PROJECT_DIR$/bin/Ground.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Ninja.class" afterPath="$PROJECT_DIR$/bin/Ninja.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Obstacle.class" afterPath="$PROJECT_DIR$/bin/Obstacle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/ObstacleDatabase.class" afterPath="$PROJECT_DIR$/bin/ObstacleDatabase.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Panel.class" afterPath="$PROJECT_DIR$/bin/Panel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/Razor.class" afterPath="$PROJECT_DIR$/bin/Razor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/SingleWood.class" afterPath="$PROJECT_DIR$/bin/SingleWood.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CollisionDetector.java" afterPath="$PROJECT_DIR$/src/CollisionDetector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameWindow.java" afterPath="$PROJECT_DIR$/src/GameWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ground.java" afterPath="$PROJECT_DIR$/src/Ground.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Ninja.java" afterPath="$PROJECT_DIR$/src/Ninja.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Obstacle.java" afterPath="$PROJECT_DIR$/src/Obstacle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ObstacleDatabase.java" afterPath="$PROJECT_DIR$/src/ObstacleDatabase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Panel.java" afterPath="$PROJECT_DIR$/src/Panel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Razor.java" afterPath="$PROJECT_DIR$/src/Razor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SingleWood.java" afterPath="$PROJECT_DIR$/src/SingleWood.java" />
     </list>
     <ignored path="RunnerGame.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,8 +42,8 @@
       <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
+            <state relative-caret-position="272">
+              <caret line="49" column="38" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -52,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/src/CollisionDetector.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="118" selection-start-line="4" selection-start-column="118" selection-end-line="4" selection-end-column="118" />
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -61,21 +62,20 @@
       <file leaf-file-name="Razor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Razor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+            <state relative-caret-position="357">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SingleWood.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SingleWood.java">
+      <file leaf-file-name="GameOver.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GameOver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+            <state relative-caret-position="238">
+              <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
               <folding>
-                <element signature="e#875#876#0" expanded="true" />
-                <element signature="e#946#947#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,18 +84,28 @@
       <file leaf-file-name="ObstacleDatabase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ObstacleDatabase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+            <state relative-caret-position="153">
+              <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ninja.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ninja.java">
+      <file leaf-file-name="GameMain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GameMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+            <state relative-caret-position="34">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ground.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ground.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -106,8 +116,8 @@
       <file leaf-file-name="Obstacle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Obstacle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="30" column="75" selection-start-line="30" selection-start-column="75" selection-end-line="30" selection-end-column="75" />
+            <state relative-caret-position="408">
+              <caret line="33" column="54" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,36 +125,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Panel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Panel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Panel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="49" column="65" selection-start-line="49" selection-start-column="65" selection-end-line="49" selection-end-column="65" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Graphics2D.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_74/src.zip!/java/awt/Graphics2D.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11118">
-              <caret line="688" column="32" selection-start-line="688" selection-start-column="32" selection-end-line="688" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#54934#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ground.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Ground.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+              <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -185,16 +170,17 @@
         <option value="$PROJECT_DIR$/src/Players.java" />
         <option value="$PROJECT_DIR$/src/Player.java" />
         <option value="$PROJECT_DIR$/src/ObstacleCreator.java" />
-        <option value="$PROJECT_DIR$/src/Ground.java" />
         <option value="$PROJECT_DIR$/src/Score.java" />
-        <option value="$PROJECT_DIR$/src/GameWindow.java" />
         <option value="$PROJECT_DIR$/src/ObstacleDatabase.java" />
         <option value="$PROJECT_DIR$/src/SingleWood.java" />
-        <option value="$PROJECT_DIR$/src/Ninja.java" />
-        <option value="$PROJECT_DIR$/src/Obstacle.java" />
         <option value="$PROJECT_DIR$/src/CollisionDetector.java" />
+        <option value="$PROJECT_DIR$/src/Obstacle.java" />
         <option value="$PROJECT_DIR$/src/Razor.java" />
+        <option value="$PROJECT_DIR$/src/Ninja.java" />
+        <option value="$PROJECT_DIR$/src/Ground.java" />
+        <option value="$PROJECT_DIR$/src/GameWindow.java" />
         <option value="$PROJECT_DIR$/src/Panel.java" />
+        <option value="$PROJECT_DIR$/src/GameOver.java" />
       </list>
     </option>
   </component>
@@ -230,7 +216,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -265,7 +251,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -276,22 +262,7 @@
       <recent name="D:\Personal\Git\TeamWork\RunnerGame\src\textures" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GameMain">
-    <configuration default="false" name="GameMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="GameMain" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="RunnerGame" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -526,14 +497,24 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="false" name="Main" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="GameMain" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="RunnerGame" />
+      <envs />
+      <method />
+    </configuration>
     <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Application.GameMain" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
     </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.GameMain" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -566,12 +547,12 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1785174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14901665" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39848813" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39770868" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -603,13 +584,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.project">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Panel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -694,11 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/textures/rectangle.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.project">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -772,11 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/textures/cutMachine.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_74/src.zip!/javax/swing/Timer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -810,13 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MenuFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -844,51 +801,27 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Score.java" />
-    <entry file="file://$PROJECT_DIR$/RunnerGame.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gpxUtilities/SpriteSheet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ground.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/textures/cutMachine.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ObstacleDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/textures/rectangle.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ninja.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+        <state relative-caret-position="578">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -906,36 +839,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Obstacle.java">
+    <entry file="file://$PROJECT_DIR$/src/Razor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="30" column="75" selection-start-line="30" selection-start-column="75" selection-end-line="30" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="357">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CollisionDetector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="118" selection-start-line="4" selection-start-column="118" selection-end-line="4" selection-end-column="118" />
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Razor.java">
+    <entry file="file://$PROJECT_DIR$/src/GameMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        <state relative-caret-position="34">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Obstacle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="33" column="54" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ground.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RunnerGame.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ObstacleDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="49" column="38" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Panel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="49" column="65" selection-start-line="49" selection-start-column="65" selection-end-line="49" selection-end-column="65" />
+        <state relative-caret-position="204">
+          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameOver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -3,6 +3,7 @@ import gpxUtilities.SpriteSheet;
 import sun.applet.Main;
 
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -16,8 +17,7 @@ public class Razor extends Obstacle {
     public Razor() {
         BufferedImageLoader loader = new BufferedImageLoader();
         BufferedImage spriteSheetCutMachine = null;
-        boundingBox = new Rectangle(x, y, width, height);
-
+        boundingBox = new Ellipse2D.Float(x, y + 2, width, width);
         try {
             spriteSheetCutMachine = loader.loadImage("src/textures/cutMachine.png");
         } catch (IOException ex) {
