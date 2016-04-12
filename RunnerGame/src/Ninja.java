@@ -22,11 +22,12 @@ public class Ninja implements ActionListener, KeyListener {
     Timer t = new Timer(100, this);
     int velx = 0, vely = 0;
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    int relativeY = (int) screenSize.getHeight() * 3 / 4 - 115;
+    int relativeY = (int) screenSize.getHeight() * 3 / 4 - 115; //the Y depends on the screen size
     int x = 150, y = relativeY;
-    int jumpheight = relativeY - 200;
+    int jumpheight = relativeY - 220; //220px jump
     int runSpriteOffcet = 5, jumpSpriteOffcet = 0;
     boolean isOnGround = true, jumpAnimationAllowed = true;
+    public Rectangle boundingBox;
 
     public Ninja() {
 
@@ -34,6 +35,7 @@ public class Ninja implements ActionListener, KeyListener {
         BufferedImageLoader loader = new BufferedImageLoader();
         BufferedImage spriteSheetRun = null;
         BufferedImage spriteSheetJump = null;
+        boundingBox = new Rectangle(x, y, 79, 85);
         try {
             spriteSheetRun = loader.loadImage("src/textures/ninjaRun.png");
             spriteSheetJump = loader.loadImage("src/textures/ninjaJump.png");
@@ -49,6 +51,7 @@ public class Ninja implements ActionListener, KeyListener {
         x += velx;
         y += vely;
         checkNinjaLocation();
+        boundingBox = new Rectangle(x, y, 79, 85);
     }
 
     public void up() {

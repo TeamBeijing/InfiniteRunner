@@ -12,6 +12,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     ObstacleDatabase obstacleDB;
     private long tStart = System.currentTimeMillis();
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    CollisionDetector checkForCollision;
 
     public Panel() {
 
@@ -21,6 +22,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         n = new Ninja();
         obstacleDB = new ObstacleDatabase();
         setFocusTraversalKeysEnabled(false);
+        checkForCollision = new CollisionDetector();
 
     }
 
@@ -28,11 +30,14 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.drawImage(n.Img, n.x, n.y, null);
+        //g2.draw(n.boundingBox); //see the boundingBox - Ninja
         for (Obstacle obst : obstacleDB.obstacles) {
             g2.drawImage(obst.img, obst.x, obst.y, null);
+            //g2.draw(obst.boundingBox);  //see the boundingBox - obstacles
         }
+
+        //print the score in the top right corner
         g2.setFont(new Font("Consolas", Font.BOLD, 40));
-        g2.setColor(Color.black);
         g2.drawString(
                 String.format("%1$10d",
                         (System.currentTimeMillis() - tStart) / 50)
@@ -42,6 +47,9 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
 
 
     public void actionPerformed(ActionEvent e) {
+        if (checkForCollision.CollisionDetector(n, obstacleDB)) {
+            t.stop();
+        }
         repaint();
     }
 

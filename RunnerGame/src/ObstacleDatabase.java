@@ -10,6 +10,7 @@ public class ObstacleDatabase implements ActionListener {
     Timer t = new Timer(1200, this);
     private Obstacle obst;
     Random r;
+
     public ObstacleDatabase(){
         t.start();
         r = new Random();

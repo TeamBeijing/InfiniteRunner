@@ -16,6 +16,7 @@ public abstract class Obstacle implements ActionListener {
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     int relativeY = (int) screenSize.getHeight() * 3 / 4 - 150;
     int x = 1400, y = relativeY;
+    public Rectangle boundingBox;
 
     public Obstacle() {
         t.start();
@@ -27,6 +28,7 @@ public abstract class Obstacle implements ActionListener {
         y += vely;
         left();
         PlayAnimation();
+        boundingBox = new Rectangle(x, y, img.getWidth(), img.getHeight());
     }
 
     public void left() {
