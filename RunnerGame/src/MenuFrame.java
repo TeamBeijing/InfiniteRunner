@@ -96,6 +96,9 @@ public class MenuFrame extends JFrame implements ActionListener {
             f.setVisible(true);
         }
         else if (action.getSource() == credits){
+            CreditsWindow c = new CreditsWindow("Credits");
+            c.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            c.setVisible(true);
             //here we can add a window with info about the game
             // and the contributors e.g. This was created as part of the SoftUni program bla bla.
         }

@@ -50,9 +50,6 @@ public class GameWindow extends JFrame {
         lpane.add(g, new Integer(0), 0);
         lpane.add(p, new Integer(1), 0);
 
-        //add(p);
-        //add(g);
-
         // remove border
         setUndecorated(true);
 
