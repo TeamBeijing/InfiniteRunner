@@ -27,7 +27,7 @@ public class Ninja implements ActionListener, KeyListener {
     int jumpheight = relativeY - 220; //220px jump
     int runSpriteOffcet = 5, jumpSpriteOffcet = 0;
     boolean isOnGround = true, jumpAnimationAllowed = true;
-    public Rectangle boundingBox;
+    public Shape boundingBox;
 
     public Ninja() {
 
@@ -35,7 +35,9 @@ public class Ninja implements ActionListener, KeyListener {
         BufferedImageLoader loader = new BufferedImageLoader();
         BufferedImage spriteSheetRun = null;
         BufferedImage spriteSheetJump = null;
-        boundingBox = new Rectangle(x, y, 79, 85);
+        int[] Xs = new int[]{x, x + 30, x + 57, x + 83, x + 71, x + 50, x + 56, x + 50, x + 24, x + 12, x + 15, x};
+        int[] Ys = new int[]{y + 22, y + 20, y, y + 21, y + 44, y + 55, y + 80, y + 86, y + 86, y + 65, y + 50, y + 35};
+        boundingBox = new Polygon(Xs, Ys, Xs.length);
         try {
             spriteSheetRun = loader.loadImage("src/textures/ninjaRun.png");
             spriteSheetJump = loader.loadImage("src/textures/ninjaJump.png");
@@ -52,11 +54,13 @@ public class Ninja implements ActionListener, KeyListener {
         y += vely;
         checkNinjaLocation();
         if (isOnGround) {
-            boundingBox = new Rectangle(x, y, 79, 85);
-        }
-        else {
-            //jumping
-            boundingBox = new Rectangle(x + 10, y, 75, 85);
+            int[] Xs = new int[]{x, x + 30, x + 57, x + 83, x + 71, x + 50, x + 56, x + 50, x + 24, x + 12, x + 15, x};
+            int[] Ys = new int[]{y + 22, y + 20, y, y + 21, y + 44, y + 55, y + 80, y + 86, y + 86, y + 65, y + 50, y + 35};
+            boundingBox = new Polygon(Xs, Ys, Xs.length);
+        } else {
+            int[] Xs = new int[]{x + 10, x + 30, x + 35, x + 72, x + 73, x + 62, x + 51, x + 35, x + 33, x + 10};
+            int[] Ys = new int[]{y + 41, y + 34, y + 9, y + 9, y + 52, y + 65, y + 80, y + 80, y + 60, y + 56};
+            boundingBox = new Polygon(Xs, Ys, Xs.length);
         }
     }
 

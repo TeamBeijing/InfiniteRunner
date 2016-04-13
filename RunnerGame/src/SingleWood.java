@@ -16,7 +16,9 @@ public class SingleWood extends Obstacle {
     public SingleWood() {
         BufferedImageLoader loader = new BufferedImageLoader();
         BufferedImage spriteSheetCutMachine = null;
-        boundingBox = new Rectangle(x, y, width, height);
+        int Ys[] = new int[]{y + 80, y, y + 80, y + height, y + height};
+        int Xs[] = new int[]{x, x + width / 2, x + width, x + width, x};
+        boundingBox = new Polygon(Xs, Ys, Xs.length);
 
         try {
             spriteSheetCutMachine = loader.loadImage("src/textures/singleWood.png");
