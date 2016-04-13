@@ -47,11 +47,13 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
 
     public void actionPerformed(ActionEvent e) {
         if (checkForCollision.CollisionDetector(n, obstacleDB)) {
+            n.die();
+        }
+        if(n.isDead){
             t.stop();
             GameOver go = new GameOver();
             go.setBounds(0,0, (int) screenSize.getWidth(), (int) screenSize.getHeight());
             this.getParent().getParent().getParent().add(go, new Integer(2), 0);
-
         }
         repaint();
     }

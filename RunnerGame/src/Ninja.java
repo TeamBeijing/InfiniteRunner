@@ -18,7 +18,7 @@ import javax.swing.*;
 public class Ninja implements ActionListener, KeyListener {
 
     public BufferedImage Img;
-    SpriteSheet ssRun, ssJump;
+    SpriteSheet ssRun, ssJump, ssDie;
     Timer t = new Timer(100, this);
     int velx = 0, vely = 0;
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -28,6 +28,7 @@ public class Ninja implements ActionListener, KeyListener {
     int runSpriteOffcet = 5, jumpSpriteOffcet = 0;
     boolean isOnGround = true, jumpAnimationAllowed = true;
     public Rectangle boundingBox;
+    public boolean isDead = false;
 
     public Ninja() {
 
@@ -35,16 +36,19 @@ public class Ninja implements ActionListener, KeyListener {
         BufferedImageLoader loader = new BufferedImageLoader();
         BufferedImage spriteSheetRun = null;
         BufferedImage spriteSheetJump = null;
+        BufferedImage spriteSheetDie = null;
         boundingBox = new Rectangle(x, y, 79, 85);
         try {
             spriteSheetRun = loader.loadImage("src/textures/ninjaRun.png");
             spriteSheetJump = loader.loadImage("src/textures/ninjaJump.png");
+            spriteSheetDie = loader.loadImage("src/textures/ninjaDie.png");
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         ssRun = new SpriteSheet(spriteSheetRun);
         ssJump = new SpriteSheet(spriteSheetJump);
+        ssDie = new SpriteSheet(spriteSheetDie);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -114,20 +118,35 @@ public class Ninja implements ActionListener, KeyListener {
         jumpSpriteOffcet = 0;
     }
 
+    public void die() {
+        if (y < relativeY) {
+            y = relativeY;
+        }
+        t.setDelay(100);
+        this.Img = ssDie.grabSprite(runSpriteOffcet, 0, 95, 85);
+        runSpriteOffcet += 98;
+        if (runSpriteOffcet >= 450) {
+            runSpriteOffcet = 0;
+            isDead = true;
+        }
+        jumpAnimationAllowed = false;
+    }
+
     public void checkNinjaLocation() {
+
         //If the ninja is at highest point at the jump tell it to fall down.
         if (y < jumpheight) {
             down();
         }
         //IF the ninja is on the ground set timer to go slower and make it run
-        if (y == relativeY) {
+        else if (y == relativeY) {
             isOnGround = true;
             t.setDelay(100);
             vely = 0;
             run();
         }
         //If ninja is going for jump play the animation
-        if (y > jumpheight && y < relativeY) {
+        else if (y > jumpheight && y < relativeY) {
             jump();
         }
 
