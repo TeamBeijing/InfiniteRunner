@@ -58,13 +58,16 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
                 obstacleDB.obstacles.remove(checkForCollision.GetIndexOfObject(n, obstacleDB));
             } else {
                 lives = 0;
-                repaint();
-                t.stop();
-                GameOver go = new GameOver();
-                go.setBounds(0, 0, (int) screenSize.getWidth(), (int) screenSize.getHeight());
-                this.getParent().getParent().getParent().add(go, new Integer(2), 0);
+                n.die();
+                t.setDelay(30);
             }
 
+        }
+        if (n.isDead) {
+            t.stop();
+            GameOver go = new GameOver();
+            go.setBounds(0, 0, (int) screenSize.getWidth(), (int) screenSize.getHeight());
+            this.getParent().getParent().getParent().add(go, new Integer(2), 0);
         }
         repaint();
     }

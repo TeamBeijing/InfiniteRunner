@@ -5,7 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 
 
@@ -35,7 +34,7 @@ public abstract class Obstacle implements ActionListener {
             boundingBox = new Ellipse2D.Float(x, y + 2, img.getWidth(), img.getWidth());
         } else {
             int Ys[] = new int[]{y + 80, y, y + 80, y + img.getHeight(), y + img.getHeight()};
-            int Xs[] = new int[]{x, x + img .getWidth() / 2, x + img .getWidth(), x + img .getWidth(), x};
+            int Xs[] = new int[]{x, x + img.getWidth() / 2, x + img.getWidth(), x + img.getWidth(), x};
             boundingBox = new Polygon(Xs, Ys, Xs.length);
         }
 
