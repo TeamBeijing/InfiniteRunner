@@ -103,7 +103,9 @@ public class MenuFrame extends JFrame implements ActionListener {
             // and the contributors e.g. This was created as part of the SoftUni program bla bla.
         }
         else if (action.getSource() == score){
-            //display window with score table
+            ScoreWindow s = new ScoreWindow("Scores");
+            s.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            s.setVisible(true);
         }
     }
 

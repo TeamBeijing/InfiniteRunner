@@ -1,7 +1,10 @@
 import javax.swing.*;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Comparator;
 
 public class GameMain {
+
     public static void main(String[] args) throws IOException {
 
         MenuFrame frame = new MenuFrame("Infinite Runner");

@@ -44,7 +44,7 @@ public class CreditsWindow extends JFrame {
         lpane.add(cp, new Integer(0), 0);
     }
 
-
+/////+
     public static class CreditsPanel extends JPanel implements ActionListener {
 
         Image softUniLogo;

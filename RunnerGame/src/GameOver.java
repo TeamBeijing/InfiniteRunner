@@ -1,11 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class GameOver extends JPanel {
 
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
     public GameOver() {
+
         setOpaque(false);
         setVisible(true);
     }

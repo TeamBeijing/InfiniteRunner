@@ -3,6 +3,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Comparator;
 import javax.swing.*;
 
 public class Panel extends JPanel implements ActionListener, KeyListener {
@@ -15,6 +18,10 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     CollisionDetector checkForCollision;
     int lives = 3;
 
+    public String currentScores;
+
+    public ArrayList<String> allScores = new ArrayList<>();
+
     public Panel() {
 
         t.start();
@@ -26,6 +33,8 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         checkForCollision = new CollisionDetector();
 
     }
+
+
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -43,11 +52,15 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
                 String.format("%1$10d",
                         (System.currentTimeMillis() - tStart) / 50)
                         .replaceAll(" ", "0"),
-                (int) screenSize.getWidth() - 240, 50);
+                        (int) screenSize.getWidth() - 240, 50);
+        currentScores = String.format("%1$10d",
+                ((System.currentTimeMillis() - tStart) / 50) + 1)
+                .replaceAll(" ", "0");
         //Draw the lives
         g2.setColor(new Color(244, 49, 49));
         g2.setFont(new Font("SansSerif", Font.PLAIN, 40));
         g2.drawString(new String(new char[lives]).replace("\0", "♥"), 20, 50);
+
     }
 
 
@@ -65,11 +78,38 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         }
         if (n.isDead) {
             t.stop();
+
+            try {
+                FileReader fr = new FileReader("scores.txt");
+                BufferedReader br = new BufferedReader(fr);
+                for (int i = 0; i < 5; i++) {
+                    allScores.add(br.readLine());
+                }
+                allScores.add(currentScores);
+                allScores.sort(Comparator.reverseOrder());
+                allScores.remove(5);
+                br.close();
+                fr.close();
+
+                FileWriter fileWriter = new FileWriter("scores.txt");
+                PrintWriter write = new PrintWriter(fileWriter);
+                for (int i = 0; i < 5; i++) {
+                write.printf("%s%n", allScores.get(i));
+                }
+                fileWriter.close();
+                write.close();
+
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+
             GameOver go = new GameOver();
             go.setBounds(0, 0, (int) screenSize.getWidth(), (int) screenSize.getHeight());
             this.getParent().getParent().getParent().add(go, new Integer(2), 0);
         }
+
         repaint();
+
     }
 
 
