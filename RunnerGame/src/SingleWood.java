@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 public class SingleWood extends Obstacle {
 
     int imageOffcet = 0;
-    int width = 35, height = 120;
+    int width = 87, height = 120;
 
     public SingleWood() {
         BufferedImageLoader loader = new BufferedImageLoader();
