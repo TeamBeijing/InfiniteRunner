@@ -20,13 +20,13 @@ public class MenuFrame extends JFrame implements ActionListener {
 
     public MenuFrame(String title) {
         super(title);
-        setSize(450, 450);
+        setSize(420, 420);
         setLocationRelativeTo(null);
         setUndecorated(true);
-        getContentPane().setBackground(new Color(60, 60, 60));
-        setShape(new Ellipse2D.Double(0, 0, getWidth(), getHeight())); //making the window circle
-        setResizable(false);
-        setLayout(null);
+        //getContentPane().setBackground(new Color(60, 60, 60));
+        //setShape(new Ellipse2D.Double(0, 0, getWidth(), getHeight())); //making the window circle
+        //setResizable(false);
+        //setLayout(null);
         //pack();
 
         try {
@@ -48,7 +48,7 @@ public class MenuFrame extends JFrame implements ActionListener {
         start.setUI(new CustomizedButtonUI(new Color(20, 20, 20),
                 new Color(100, 100, 100), new Color(150, 150, 150),
                 new Font(customFont.getName(), Font.PLAIN, 17), Color.white));
-        start.setBounds(148, 90, 160, 40);
+        start.setBounds(70, 90, 160, 40);
         add(start);
 
         score = new JButton("Scores");
@@ -57,7 +57,7 @@ public class MenuFrame extends JFrame implements ActionListener {
         score.setUI(new CustomizedButtonUI(new Color(20, 20, 20),
                 new Color(100, 100, 100), new Color(150, 150, 150),
                 new Font(customFont.getName(), Font.PLAIN, 17), Color.white));
-        score.setBounds(148, 142, 160, 40);
+        score.setBounds(70, 142, 160, 40);
         add(score);
 
         credits = new JButton("Credits");
@@ -66,7 +66,7 @@ public class MenuFrame extends JFrame implements ActionListener {
         credits.setUI(new CustomizedButtonUI(new Color(20, 20, 20),
                 new Color(100, 100, 100), new Color(150, 150, 150),
                 new Font(customFont.getName(), Font.PLAIN, 17), Color.white));
-        credits.setBounds(148, 194, 160, 40);
+        credits.setBounds(70, 194, 160, 40);
         add(credits);
 
         exit = new JButton("Exit");
@@ -75,7 +75,7 @@ public class MenuFrame extends JFrame implements ActionListener {
         exit.setUI(new CustomizedButtonUI(new Color(20, 20, 20),
                 new Color(100, 100, 100), new Color(150, 150, 150),
                 new Font(customFont.getName(), Font.PLAIN, 17), Color.white));
-        exit.setBounds(148, 246, 160, 40);
+        exit.setBounds(70, 246, 160, 40);
         add(exit);
 
         //Layer
