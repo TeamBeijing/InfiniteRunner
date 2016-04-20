@@ -15,7 +15,7 @@ import sun.applet.Main;
 
 import javax.swing.*;
 
-public class Ninja implements ActionListener, KeyListener {
+public class Ninja implements ActionListener {
 
     public BufferedImage Img;
     SpriteSheet ssRun, ssJump, ssDie;
@@ -56,14 +56,14 @@ public class Ninja implements ActionListener, KeyListener {
 
     public void actionPerformed(ActionEvent e) {
         x += velx;
-        if (x > (int) screenSize.getWidth() - 85){
+        if (x > (int) screenSize.getWidth() - 85) {
             x = (int) screenSize.getWidth() - 85;
         }
-        if (x < 0){
+        if (x < 0) {
             x = 0;
         }
         y += vely;
-        if (y > relativeY){
+        if (y > relativeY) {
             y = relativeY;
         }
         checkNinjaLocation();
@@ -88,12 +88,6 @@ public class Ninja implements ActionListener, KeyListener {
         }
     }
 
-    public void keyPressed(KeyEvent e) {
-        int key = e.getKeyCode();
-        if (key == KeyEvent.VK_LEFT) {
-            left();
-        }
-    }
 
     public void down() {
         vely = 10;
@@ -102,12 +96,12 @@ public class Ninja implements ActionListener, KeyListener {
 
     public void left() {
         vely = 0;
-        velx = -10;
+        velx = -15;
     }
 
     public void right() {
         vely = 0;
-        velx = 10;
+        velx = 15;
     }
 
     public void jump() {

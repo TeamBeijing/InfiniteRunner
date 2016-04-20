@@ -6,6 +6,7 @@ import java.awt.event.KeyListener;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Random;
 import javax.swing.*;
 
 public class Panel extends JPanel implements ActionListener, KeyListener {
@@ -17,6 +18,9 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     CollisionDetector checkForCollision;
     int lives = 3;
+    Random r = new Random();
+    int high = 1400;
+    int low = 750;
 
     public String currentScores;
 
@@ -40,6 +44,11 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         //g2.draw(n.boundingBox); //see the boundingBox - Ninja
+
+        //change the delay for (space between) obstacles
+        int delay = r.nextInt(high - low) + low;
+        obstacleDB.t.setDelay(delay);
+
         for (Obstacle obst : obstacleDB.obstacles) {
             g2.drawImage(obst.img, obst.x, obst.y, null);
             //g2.draw(obst.boundingBox);  //see the boundingBox - obstacles
@@ -115,11 +124,14 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
 
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
+
         if (key == KeyEvent.VK_LEFT) {
+           if (n.isOnGround)
             n.left();
         }
 
         if (key == KeyEvent.VK_RIGHT) {
+            if (n.isOnGround)
             n.right();
         }
 
@@ -136,5 +148,9 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     }
 
     public void keyReleased(KeyEvent e) {
+        int key = e.getKeyCode();
+        if (key == KeyEvent.VK_RIGHT || key == KeyEvent.VK_LEFT){
+            n.velx = 0;
+        }
     }
 }

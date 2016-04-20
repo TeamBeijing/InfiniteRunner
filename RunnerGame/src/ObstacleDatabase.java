@@ -7,13 +7,14 @@ import java.util.Iterator;
 import java.util.Random;
 
 public class ObstacleDatabase implements ActionListener {
-    Timer t = new Timer(1200, this);
     private Obstacle obst;
     Random r;
+    Timer t = new Timer(1200, this);
 
     public ObstacleDatabase(){
-        t.start();
+
         r = new Random();
+        t.start();
         obstacles = new ArrayList<Obstacle>();
     }
 

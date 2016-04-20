@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class CreditsWindow extends JFrame {
 
-    private int width = 600;
+    private int width = 640;
     private int height = 500;
 
     public CreditsWindow(String title) {
@@ -84,8 +84,8 @@ public class CreditsWindow extends JFrame {
 
             JLabel team = new JLabel("Team Beijing", JLabel.CENTER);
             team.setFont(new Font(customFont.getFontName(), Font.PLAIN, 30));
-            team.setBounds(0, 0, 600 / 2, 40);
-            team.setLocation(600 / 2 - 600 / 4, 102);
+            team.setBounds(0, 0, 640 / 2, 40);
+            team.setLocation(640 / 2 - 640 / 4, 102);
             add(team);
 
             ArrayList<JLabel> lables = new ArrayList<>();
@@ -102,10 +102,10 @@ public class CreditsWindow extends JFrame {
 
             for (int i = 0; i < lables.size(); i++) {
                 JLabel jl = lables.get(i);
-                int X = 5 + (595 / 5) * i;
+                int X = 25 + (595 / 5) * i;
                 int Y = 282;
                 if (i > 4) {
-                    X = 5 + (595 / 5) * (i - 5);
+                    X = 25 + (595 / 5) * (i - 5);
                     Y += 19;
                 }
                 jl.setFont(new Font(customFont2.getName(), Font.PLAIN, 16));
@@ -121,7 +121,7 @@ public class CreditsWindow extends JFrame {
             textLines.add(new JLabel("Java Fundamentals course (March 2016) at Software University.", JLabel.CENTER));
             for (int i = 0; i < textLines.size(); i++) {
                 JLabel text = textLines.get(i);
-                text.setBounds(0, 0, 600, 40);
+                text.setBounds(0, 0, 640, 40);
                 text.setFont(new Font(customFont2.getName(), Font.PLAIN, 17));
                 text.setForeground(Color.darkGray);
                 text.setLocation(0, 350 + 20 * i);
@@ -135,7 +135,7 @@ public class CreditsWindow extends JFrame {
                     new Color(255, 160, 0), new Color(100, 100, 100),
                     new Font(customFont.getName(), Font.PLAIN, 17), Color.white));
             back.setBounds(0, 0, 120, 40);
-            back.setLocation(600 / 2 - 120 / 2, 440);
+            back.setLocation(640 / 2 - 120 / 2, 440);
             add(back);
 
         }
@@ -153,9 +153,9 @@ public class CreditsWindow extends JFrame {
 
             for (int i = 0; i < 5; i++) {
                 g2.setColor(new Color(255, 160, 0));
-                Ellipse2D circle = new Ellipse2D.Float(7 + 118 * i, 172, 115, 110);
+                Ellipse2D circle = new Ellipse2D.Float(27 + 118 * i, 172, 115, 110);
                 g2.fill(circle);
-                g2.drawImage(allImages[i], 30 + 118 * i, 190, this);
+                g2.drawImage(allImages[i], 50 + 118 * i, 190, this);
             }
 
         }
