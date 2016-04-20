@@ -11,6 +11,7 @@ import java.io.IOException;
 public class MenuFrame extends JFrame implements ActionListener {
 
     private Font customFont;
+    private Font customFont2;
     private JButton start;
     private JButton score;
     private JButton credits;
@@ -20,7 +21,7 @@ public class MenuFrame extends JFrame implements ActionListener {
 
     public MenuFrame(String title) {
         super(title);
-        setSize(420, 420);
+        setSize(640, 423);
         setLocationRelativeTo(null);
         setUndecorated(true);
         //getContentPane().setBackground(new Color(60, 60, 60));
@@ -33,7 +34,7 @@ public class MenuFrame extends JFrame implements ActionListener {
             customFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/textures/ka1.ttf")).deriveFont(14f);
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             ge.registerFont(customFont);
-            backgroundIMG = ImageIO.read(new File("src/textures/Menubackground3.png"));
+            backgroundIMG = ImageIO.read(new File("src/textures/Menubackground4.png"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         } catch (FontFormatException e) {
@@ -42,13 +43,22 @@ public class MenuFrame extends JFrame implements ActionListener {
 
         Border emptyBorder = BorderFactory.createEmptyBorder();
 
+        JLabel gameTitle = new JLabel("Ninja Runner");
+        gameTitle.setBounds(0, 0, 245, 40);
+        //Border border = BorderFactory.createLineBorder(Color.BLACK, 1); - see border
+        //gameTitle.setBorder(border);
+        gameTitle.setFont(new Font(customFont.getName(), Font.ITALIC, 25));
+        gameTitle.setForeground(Color.white);
+        gameTitle.setLocation(640/2 - 120, 10);
+        add(gameTitle);
+
         start = new JButton("Start");
         start.addActionListener(this);
         start.setBorder(emptyBorder);
         start.setUI(new CustomizedButtonUI(new Color(20, 20, 20),
                 new Color(100, 100, 100), new Color(150, 150, 150),
                 new Font(customFont.getName(), Font.PLAIN, 17), Color.white));
-        start.setBounds(70, 90, 160, 40);
+        start.setBounds(70, 142, 160, 40);
         add(start);
 
         score = new JButton("Scores");
@@ -57,7 +67,7 @@ public class MenuFrame extends JFrame implements ActionListener {
         score.setUI(new CustomizedButtonUI(new Color(20, 20, 20),
                 new Color(100, 100, 100), new Color(150, 150, 150),
                 new Font(customFont.getName(), Font.PLAIN, 17), Color.white));
-        score.setBounds(70, 142, 160, 40);
+        score.setBounds(70, 194, 160, 40);
         add(score);
 
         credits = new JButton("Credits");
@@ -66,7 +76,7 @@ public class MenuFrame extends JFrame implements ActionListener {
         credits.setUI(new CustomizedButtonUI(new Color(20, 20, 20),
                 new Color(100, 100, 100), new Color(150, 150, 150),
                 new Font(customFont.getName(), Font.PLAIN, 17), Color.white));
-        credits.setBounds(70, 194, 160, 40);
+        credits.setBounds(70, 246, 160, 40);
         add(credits);
 
         exit = new JButton("Exit");
@@ -75,7 +85,7 @@ public class MenuFrame extends JFrame implements ActionListener {
         exit.setUI(new CustomizedButtonUI(new Color(20, 20, 20),
                 new Color(100, 100, 100), new Color(150, 150, 150),
                 new Font(customFont.getName(), Font.PLAIN, 17), Color.white));
-        exit.setBounds(70, 246, 160, 40);
+        exit.setBounds(70, 298, 160, 40);
         add(exit);
 
         //Layer

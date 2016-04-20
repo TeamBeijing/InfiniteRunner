@@ -33,8 +33,8 @@ public abstract class Obstacle implements ActionListener {
         if (getClass() == Razor.class) {
             boundingBox = new Ellipse2D.Float(x, y + 2, img.getWidth(), img.getWidth());
         } else {
-            int Ys[] = new int[]{y + 80, y, y + 80, y + img.getHeight(), y + img.getHeight()};
-            int Xs[] = new int[]{x, x + img.getWidth() / 2, x + img.getWidth(), x + img.getWidth(), x};
+            int Ys[] = new int[]{y + 120, y + 107, y + 104, y, y + 100, y + 102, y + 120};
+            int Xs[] = new int[]{x, x, x + 12, x + 41, x + 71, x + 81, x + 87};
             boundingBox = new Polygon(Xs, Ys, Xs.length);
         }
 

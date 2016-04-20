@@ -56,7 +56,16 @@ public class Ninja implements ActionListener, KeyListener {
 
     public void actionPerformed(ActionEvent e) {
         x += velx;
+        if (x > (int) screenSize.getWidth() - 85){
+            x = (int) screenSize.getWidth() - 85;
+        }
+        if (x < 0){
+            x = 0;
+        }
         y += vely;
+        if (y > relativeY){
+            y = relativeY;
+        }
         checkNinjaLocation();
         if (isOnGround) {
             int[] Xs = new int[]{x, x + 30, x + 57, x + 83, x + 71, x + 50, x + 56, x + 50, x + 24, x + 12, x + 15, x};
