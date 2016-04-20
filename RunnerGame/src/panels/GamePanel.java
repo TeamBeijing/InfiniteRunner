@@ -105,7 +105,13 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
                 e1.printStackTrace();
             }
 
-            GameOver gameOver = new GameOver();
+            //Show game over panel
+            GameOver gameOver;
+            if (this.allScores.contains(this.currentScores)) {
+                gameOver = new GameOver(true, this.allScores.indexOf(this.currentScores));
+            } else {
+                gameOver = new GameOver(false, 0); //
+            }
             gameOver.setBounds(0, 0, (int) this.screenSize.getWidth(), (int) this.screenSize.getHeight());
             this.getParent().getParent().getParent().add(gameOver, new Integer(2), 0);
         }

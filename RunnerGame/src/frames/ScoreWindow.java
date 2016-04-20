@@ -16,9 +16,9 @@ import java.io.IOException;
 import java.util.*;
 
 
-public class ScoreWindow extends JFrame{
-    private int width = 600;
-    private int height = 700;
+public class ScoreWindow extends JFrame {
+    public int width = 640;
+    public int height = 600;
 
     public ScoreWindow(String title) {
         super(title);
@@ -49,10 +49,10 @@ public class ScoreWindow extends JFrame{
         add(cp);
         lpane.add(cp, new Integer(0), 0);
     }
+
     public static class ScorePanel extends JPanel implements ActionListener {
 
-
-        Image runnerLogo;
+        Image ninjaLogo;
         Image maleAvatar;
         Image femaleAvatar;
         Image[] allImages;
@@ -64,23 +64,17 @@ public class ScoreWindow extends JFrame{
             setOpaque(false);
             setLayout(null);
 
-
-
             try {
                 customFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/textures/ka1.ttf")).deriveFont(14f);
                 GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
                 ge.registerFont(customFont);
                 customFont2 = Font.createFont(Font.TRUETYPE_FONT, new File("src/textures/Lato-Black.ttf")).deriveFont(14f);
                 ge.registerFont(customFont2);
-                runnerLogo = ImageIO.read(new File("src/textures/runnerLogo.png")).getScaledInstance(100, 70, Image.SCALE_SMOOTH);
-                maleAvatar = ImageIO.read(new File("src/textures/maleAvatar.png")).getScaledInstance(70, 70, Image.SCALE_SMOOTH);
-                femaleAvatar = ImageIO.read(new File("src/textures/femaleAvatar.png")).getScaledInstance(70, 70, Image.SCALE_SMOOTH);
+                ninjaLogo = ImageIO.read(new File("src/textures/NinjaLogo.png")).getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+                maleAvatar = ImageIO.read(new File("src/textures/ninja2.png")).getScaledInstance(50, 50, Image.SCALE_SMOOTH);
                 allImages = new Image[5];
                 for (int i = 0; i < 5; i++) {
                     Image img = maleAvatar;
-                    if (i == 2) {
-                        img = femaleAvatar;
-                    }
                     allImages[i] = img;
                 }
             } catch (IOException e1) {
@@ -91,17 +85,28 @@ public class ScoreWindow extends JFrame{
 
             JLabel team = new JLabel("Ninja Runner Scores", JLabel.CENTER);
             team.setFont(new Font(customFont.getFontName(), Font.PLAIN, 30));
-            team.setBounds(0, 0, 1000 / 2, 40);
-            team.setLocation(395 / 2 - 600 / 4, 95);
+            team.setBounds(0, 0, 500, 40);
+            team.setLocation(640 / 2 - team.getWidth() / 2, 105);
             add(team);
 
             ArrayList<String> allScores = new ArrayList<>();
+            ArrayList<String> allNames = new ArrayList<>();
+
             try {
-                FileReader fr = new FileReader("scores.txt");
+                FileReader fr = new FileReader("src/files/scores.txt");
                 BufferedReader br = new BufferedReader(fr);
+                FileReader frNames = new FileReader("src/files/names.txt");
+                BufferedReader brNames = new BufferedReader(frNames);
                 for (int i = 0; i < 5; i++) {
                     allScores.add(br.readLine());
                 }
+
+                for (int i = 0; i < 5; i++) {
+                    allNames.add(brNames.readLine());
+                }
+
+                frNames.close();
+                brNames.close();
                 br.close();
                 fr.close();
             } catch (IOException e1) {
@@ -109,46 +114,48 @@ public class ScoreWindow extends JFrame{
             }
 
             ArrayList<JLabel> lables = new ArrayList<>();
-            lables.add(new JLabel("BEST SCORE:", JLabel.RIGHT));
-            lables.add(new JLabel("BETER SCORE:", JLabel.RIGHT));
-            lables.add(new JLabel("GOOD SCORE:", JLabel.RIGHT));
-            lables.add(new JLabel("BAD SCORE:", JLabel.RIGHT));
-            lables.add(new JLabel("WORST SCORE:", JLabel.RIGHT));
+            lables.add(new JLabel(allNames.get(0), JLabel.LEFT));
+            lables.add(new JLabel(allNames.get(1), JLabel.LEFT));
+            lables.add(new JLabel(allNames.get(2), JLabel.LEFT));
+            lables.add(new JLabel(allNames.get(3), JLabel.LEFT));
+            lables.add(new JLabel(allNames.get(4), JLabel.LEFT));
 
-            lables.add(new JLabel(allScores.get(0), JLabel.RIGHT));
-            lables.add(new JLabel(allScores.get(1), JLabel.RIGHT));
-            lables.add(new JLabel(allScores.get(2), JLabel.RIGHT));
-            lables.add(new JLabel(allScores.get(3), JLabel.RIGHT));
-            lables.add(new JLabel(allScores.get(4), JLabel.RIGHT));
-
+            lables.add(new JLabel(allScores.get(0), JLabel.LEFT));
+            lables.add(new JLabel(allScores.get(1), JLabel.LEFT));
+            lables.add(new JLabel(allScores.get(2), JLabel.LEFT));
+            lables.add(new JLabel(allScores.get(3), JLabel.LEFT));
+            lables.add(new JLabel(allScores.get(4), JLabel.LEFT));
 
 
             for (int i = 0; i < lables.size(); i++) {
                 JLabel jl = lables.get(i);
-                int X = 160;
-                int Y = (200 * (i + 1)) - (95 * i);
+                int X = 140;
+                int Y = (195 + i*70);
+                jl.setFont(new Font(customFont.getName(), Font.PLAIN, 22));
+                jl.setForeground(new Color(50, 50, 50));
                 if (i > 4) {
-                    X = 260;
-                    Y = (200 * (i - 4)) - (95 * (i - 5));
+                    X = 430;
+                    Y = (195 + (i - 5) * 70);
+                    jl.setFont(new Font("Consolas", Font.BOLD, 24));
+                    jl.setForeground(new Color(70, 70, 70));
                 }
 
-                jl.setFont(new Font(customFont2.getName(), Font.PLAIN, 16));
-                jl.setBounds(0, 0, 125, 22);
+
+                jl.setBounds(0, 0, 400, 22);
                 jl.setLocation(X, Y);
-                jl.setForeground(new Color(35, 68, 101));
+
                 add(jl);
             }
-
 
 
             back = new JButton("Back");
             back.addActionListener(this);
             back.setBorder(BorderFactory.createEmptyBorder());
-            back.setUI(new CustomizedButtonUI(new Color(35, 68, 101),
-                    new Color(255, 160, 0), new Color(100, 100, 100),
+            back.setUI(new CustomizedButtonUI(new Color(20, 20, 20),
+                    new Color(100, 100, 100), new Color(150, 150, 150),
                     new Font(customFont.getName(), Font.PLAIN, 17), Color.white));
             back.setBounds(0, 0, 120, 40);
-            back.setLocation(470, 650);
+            back.setLocation(640/2 - 120/2, 550);
             add(back);
 
         }
@@ -162,13 +169,10 @@ public class ScoreWindow extends JFrame{
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             Graphics2D g2 = (Graphics2D) g;
-            g2.drawImage(runnerLogo, (getWidth() - runnerLogo.getWidth(this)) / 2, 15, this);
+            g2.drawImage(ninjaLogo, (getWidth() - ninjaLogo.getWidth(this)) / 2, 15, this);
 
             for (int i = 0; i < 5; i++) {
-                g2.setColor(new Color(255, 160, 0));
-                Ellipse2D circle = new Ellipse2D.Float(49, (160 * (i + 1)) - (55 * i), 107, 102);
-                g2.fill(circle);
-                g2.drawImage(allImages[i], 70, (170 * (i + 1)) - (65 * i), 70, 70, this);
+                g2.drawImage(allImages[i], 60, (180 + i*70), 50, 50, this);
             }
 
         }
