@@ -9,8 +9,7 @@ import java.io.IOException;
 
 public class GameWindow extends JFrame {
 
-    private Image backgroundIMG;
-
+    Color backgroundColor = new Color(230, 230, 230);
     public GameWindow(String title, int width, int height) {
         setTitle(title);
         setLocationRelativeTo(null);
@@ -42,9 +41,12 @@ public class GameWindow extends JFrame {
         add(lpane, BorderLayout.CENTER);
         lpane.setBounds(0, 0, (int) screenSize.getWidth(), (int) screenSize.getHeight());
 
+
         Panel p = new Panel();
+        p.setBackground(backgroundColor);
         p.setBounds(0, 0, (int)screenSize.getWidth(), (int)screenSize.getHeight() * 3/4 - 30);
         Ground g = new Ground();
+        g.setBackground(backgroundColor);
         g.setBounds(0, (int)screenSize.getHeight() * 3/4 - 30, (int) screenSize.getWidth(), (int) screenSize.getHeight());
 
         lpane.add(g, new Integer(0), 0);

@@ -85,10 +85,10 @@ public class ScoreWindow extends JFrame{
                 f.printStackTrace();
             }
 
-            JLabel team = new JLabel("Infinity Runner Scores", JLabel.CENTER);
+            JLabel team = new JLabel("Ninja Runner Scores", JLabel.CENTER);
             team.setFont(new Font(customFont.getFontName(), Font.PLAIN, 30));
             team.setBounds(0, 0, 1000 / 2, 40);
-            team.setLocation(395 / 2 - 600 / 4, 102);
+            team.setLocation(395 / 2 - 600 / 4, 95);
             add(team);
 
             ArrayList<String> allScores = new ArrayList<>();

@@ -15,7 +15,7 @@ public class Ground extends JPanel {
     public Ground() {
 
         try {
-            backgroundIMG = ImageIO.read(new File("src/textures/background.png"))
+            backgroundIMG = ImageIO.read(new File("src/textures/background2.png"))
                     .getScaledInstance((int) screenSize.getWidth(), (int) screenSize.getHeight() / 4, Image.SCALE_SMOOTH);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
