@@ -11,6 +11,11 @@ import java.awt.event.KeyEvent;
 
 public class GameWindow extends JFrame {
 
+    private Dimension screenSize;
+    private JLayeredPane lpane;
+    private GamePanel gPanel;
+    private Ground ground;
+
     public GameWindow(String title) {
         Color backgroundColor = new Color(230, 230, 230);
         setTitle(title);
@@ -34,24 +39,23 @@ public class GameWindow extends JFrame {
         //setSize(width, height);
 
         //ScreenSize
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+         this.screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
         //add panel
-
-        JLayeredPane lpane = new JLayeredPane();
+        this.lpane = new JLayeredPane();
         setLayout(new BorderLayout());
-        add(lpane, BorderLayout.CENTER);
-        lpane.setBounds(0, 0, (int) screenSize.getWidth(), (int) screenSize.getHeight());
+        add(this.lpane, BorderLayout.CENTER);
+        this.lpane.setBounds(0, 0, (int) this.screenSize.getWidth(), (int) this.screenSize.getHeight());
 
-        GamePanel p = new GamePanel();
-        p.setBackground(backgroundColor);
-        p.setBounds(0, 0, (int)screenSize.getWidth(), (int)screenSize.getHeight() * 3/4 - 30);
-        Ground g = new Ground();
-        g.setBackground(backgroundColor);
-        g.setBounds(0, (int)screenSize.getHeight() * 3/4 - 30, (int) screenSize.getWidth(), (int) screenSize.getHeight());
+        this.gPanel= new GamePanel();
+        this.gPanel.setBackground(backgroundColor);
+        this.gPanel.setBounds(0, 0, (int)screenSize.getWidth(), (int)screenSize.getHeight() * 3/4 - 30);
+        this.ground = new Ground();
+        this.ground .setBackground(backgroundColor);
+        this.ground .setBounds(0, (int)screenSize.getHeight() * 3/4 - 30, (int) screenSize.getWidth(), (int) screenSize.getHeight());
 
-        lpane.add(g, new Integer(0), 0);
-        lpane.add(p, new Integer(1), 0);
+        lpane.add(this.ground , new Integer(0), 0);
+        lpane.add(this.gPanel, new Integer(1), 0);
 
         // remove border
         setUndecorated(true);
